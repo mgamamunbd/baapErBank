@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap");
+/** @format */
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300&display=swap");
 
 * {
   box-sizing: border-box;
@@ -12,7 +15,8 @@ body {
   flex-direction: column;
   align-items: center;
   color: rgb(34, 34, 34);
-  font-family: "Comfortaa", cursive;
+  font-family: "Noto Serif", serif;
+  font-family: "Hind Siliguri", sans-serif;
 }
 
 header {
@@ -22,8 +26,9 @@ header {
   padding: 20px;
 }
 
-header h3 {
+header h1 h3 {
   margin-top: 10px;
+  text-align: center;
 }
 
 header h1,
