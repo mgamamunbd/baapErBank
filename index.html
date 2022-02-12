@@ -27,41 +27,48 @@
     <!-- main section -->
 
     <main>
-      <div class="output-card-container">
-        <div class="output-card green p-2">
-          <h2 class="pt-4">Deposit</h2>
-          <p>$<span id="deposit-output">00</span></p>
-        </div>
-        <div class="output-card red p-2">
-          <h2 class="pt-4">Withdraw</h2>
-          <p>$<span id="withdraw-output">00</span></p>
-        </div>
-        <div class="output-card blue p-2">
-          <h2 class="pt-4">Balance</h2>
-          <p>$<span id="balance-output">00</span></p>
-        </div>
-      </div>
-      <div class="input-card-container">
-        <div class="input-card">
-          <h1>Deposit Money</h1>
-          <p>যত পারিস জমা দে</p>
-
-          <div>
-            <input type="text" id="deposit-value" />
-            <button class="bg-green" onclick="deposit()">Deposit</button>
+      <section class="container">
+        <div class="output-card-container">
+          <div class="output-card green p-2">
+            <h2 class="pt-4">Deposit</h2>
+            <p>$<span id="deposit-output">00</span></p>
+          </div>
+          <div class="output-card red p-2">
+            <h2 class="pt-4">Withdraw</h2>
+            <p>$<span id="withdraw-output">00</span></p>
+          </div>
+          <div class="output-card blue p-2">
+            <h2 class="pt-4">Balance</h2>
+            <p>$<span id="balance-output">00</span></p>
           </div>
         </div>
-        <div class="input-card">
-          <h1>Withdraw Money</h1>
-          <p>খবরদার, টাকা তুলবিনা !</p>
+      </section>
+      <section class="container">
+        <div
+          class="input-card-container container d-flex, justify-content-between align-items-center"
+        >
+          <div class="input-card">
+            <h1>Deposit</h1>
+            <p>যত পারিস জমা দে !</p>
 
-          <div class="mb-5">
-            <input type="text" id="withdraw-value" />
-            <button onclick="withdraw()" class="bg-red">Withdraw</button>
+            <div>
+              <input type="text" id="deposit-value" />
+              <button class="bg-green" onclick="deposit()">Deposit</button>
+            </div>
+          </div>
+          <div class="input-card">
+            <h1>Withdraw</h1>
+            <p>খবরদার, টাকা তুলবিনা !</p>
+
+            <div>
+              <input type="text" id="withdraw-value" />
+              <button onclick="withdraw()" class="bg-red">Withdraw</button>
+            </div>
           </div>
         </div>
-      </div>
-      <footer class="text-center py-1 mt-5 bg-black text-white">
+      </section>
+
+      <footer class="text-center py-1 mt-5 text-white w-auto container-fluid">
         মায়ের দোয়া - বাপের ব্যাংক প্রাইভেট লিমিটেড
       </footer>
     </main>

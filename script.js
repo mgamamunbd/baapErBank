@@ -1,3 +1,5 @@
+/** @format */
+
 // Deposit
 let depositValue = document.getElementById("deposit-value");
 let depositOutput = document.getElementById("deposit-output");

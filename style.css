@@ -130,11 +130,3 @@ button:active {
 .bg-red:hover {
   background-color: #b84444;
 }
-footer {
-  height: 95px;
-  width: 100%;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
