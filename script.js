@@ -1,36 +1,57 @@
-// Deposit
-let depositValue = document.getElementById("deposit-value");
-let depositOutput = document.getElementById("deposit-output");
-
-//Withdraw
-let withdrawValue = document.getElementById("withdraw-value");
-let withdrawOutput = document.getElementById("withdraw-output");
-
-//Total Balance
-let balanceOutput = document.getElementById("balance-output");
-
-function addMoney(currentAmount, newAmount) {
-  return Number(currentAmount) + Number(newAmount);
+/** @format */
+//input fields
+function getInputValue(id) {
+  const inputField = document.getElementById(id);
+  const valueText = inputField.value;
+  const value = Number(valueText);
+  inputField.value = "";
+  return value;
 }
-
-function getMoney(currentAmount, newAmount) {
-  return Number(currentAmount) - Number(newAmount);
+//update total
+function updateTotal(id, amount) {
+  const totalTag = document.getElementById(id);
+  const previousTotalText = totalTag.innerText;
+  const previousTotal = Number(previousTotalText);
+  const newTotal = previousTotal + amount;
+  totalTag.innerText = newTotal;
 }
-
-function deposit() {
-  const totalBalance = addMoney(depositOutput.innerText, depositValue.value);
-  depositOutput.innerText = totalBalance;
-  balanceOutput.innerText = totalBalance;
-
-  depositValue.value = "";
+//current balance
+function getCurrentBalance() {
+  const balanceTag = document.getElementById("balance-output");
+  const balanceText = balanceTag.innerText;
+  const balance = Number(balanceText);
+  return balance;
 }
-
-function withdraw() {
-  const totalWithdraw = addMoney(withdrawOutput.innerText, withdrawValue.value);
-  withdrawOutput.innerText = totalWithdraw;
-
-  const totalBalance = getMoney(balanceOutput.innerText, withdrawValue.value);
-  balanceOutput.innerText = totalBalance;
-
-  withdrawValue.value = "";
+//update balance
+function updateBalance(amount) {
+  const balanceTag = document.getElementById("balance-output");
+  const balanceText = balanceTag.innerText;
+  const previousBalance = Number(balanceText);
+  const newBalance = previousBalance + amount;
+  balanceTag.innerText = newBalance;
 }
+//deposit button
+document
+  .getElementById("deposit-button")
+  .addEventListener("click", function () {
+    const amount = getInputValue("deposit-value");
+    if (amount > 0) {
+      updateTotal("deposit-output", amount);
+      updateBalance(amount);
+    } else {
+      alert("Please enter a valid amount");
+    }
+  });
+
+//withdraw button
+document
+  .getElementById("withdraw-button")
+  .addEventListener("click", function () {
+    const amount = getInputValue("withdraw-value");
+    if (amount > getCurrentBalance()) {
+      alert("You do not have enough money to withdraw that amount");
+    } else {
+      updateTotal("withdraw-output", amount);
+      updateBalance(-amount);
+    }
+  });
